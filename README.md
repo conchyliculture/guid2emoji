@@ -1,6 +1,6 @@
 # guid2emoji
 
-Converts GUID into emojis and back
+Solve all your naming issues by converting Strings into emojis and back. It is extra smart when converting hex strings.
 
 # Installation
 
@@ -12,9 +12,8 @@ find / -name ".rvm" -exec rm -rf "{}" \;
 ```
 
 # Usage
-Converts from a guid/uuid to a emoji string, and back again.
 
-Examples: 
+Convert a normal string
 
     $ ruby g2e.rb f1441f79-d010-4275-ad87-46a909b2c772
     f1441f79-d010-4275-ad87-46a909b2c772 = 🙦😱😴😴😱🙦😷😹😭🙤😰😱😰😭😴😲😷😵😭🙡🙤😸😷😭😴😶🙡😹😰😹🙢😲🙣😷😷😲
@@ -22,7 +21,7 @@ Examples:
     $ ruby g2e.rb 🙦😱😴😴😱🙦😷😹😭🙤😰😱😰😭😴😲😷😵😭🙡🙤😸😷😭😴😶🙡😹😰😹🙢😲🙣😷😷😲
     🙦😱😴😴😱🙦😷😹😭🙤😰😱😰😭😴😲😷😵😭🙡🙤😸😷😭😴😶🙡😹😰😹🙢😲🙣😷😷😲 = f1441f79-d010-4275-ad87-46a909b2c772
 
-You can use the -x option to make it more compact when converting hex strings
+Convert a hex string
 
     $ ruby g2e.rb -x f1441f79d0104275ad8746a909b2c772
     f1441f79d0104275ad8746a909b2c772 = 🏱🕄🔟👹🗐🔐🍂👵💭🖇🍆🎩🐉💲🗇🍲
