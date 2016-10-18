@@ -3,7 +3,7 @@ $: << "."
 require "e4all"
 
 def usage()
-    puts "Converts from a guid/uuid to a emoji string, and back again.\n\n"
+    puts "Converts from a string to an emoji string, and back again.\n\n"
     puts "Examples: \n"
     require "securerandom"; u = SecureRandom.uuid
     puts "$ ruby #{__FILE__} #{u}"
