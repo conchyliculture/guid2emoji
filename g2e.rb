@@ -1,29 +1,45 @@
 #!/usr/bin/ruby
+$: << "."
+require "e4all"
 
-def gb(g)
-    return g.downcase.gsub(/[^0-9a-f]/,'').scan(/../).map{|x| eval("\"\\u{"+%w{1f3 1f4 1f5 }[rand(3)]+x+"}\"")}.join()
-end
-
-def bg(s)
-    s = s.each_codepoint.map{|i| i.to_s(16)[-2..-1]}.join()
-    return "#{s[0..7]}-#{s[8..11]}-#{s[12..15]}-#{s[16..19]}-#{s[20..31]}"
-end
-
-if ARGV.size > 0
-    ARGV.each do |input|
-        if input=~/[\\u{1F300}-\u{1F5FF}]/
-            puts "#{input} = #{bg(input)}" 
-        else
-            puts "#{input} = #{gb(input)}"
-        end
-    end
-else
+def usage()
     puts "Converts from a guid/uuid to a emoji string, and back again.\n\n"
     puts "Examples: \n"
     require "securerandom"; u = SecureRandom.uuid
-    gu = gb(u)
     puts "$ ruby #{__FILE__} #{u}"
-    puts "#{u} = #{gu}\n\n"
-    puts "$ ruby #{__FILE__} #{gu}"
-    puts "#{gu} = #{bg(gu)}"
+    puts "#{u} = #{u.to_e}\n\n"
+    puts "$ ruby #{__FILE__} #{u.to_e}"
+    puts "#{u.to_e} = #{u.to_e.parse_e}"
+    puts ""
+
+    puts "You can use the -x option to make it more compact when converting hex strings\n"
+    u=u.gsub("-","")
+    puts "$ ruby #{__FILE__} -x #{u}"
+    puts "#{u} = #{u.hex_to_e}\n\n"
+    puts "$ ruby #{__FILE__} -x #{u.hex_to_e}"
+    puts "#{u.hex_to_e} = #{u.hex_to_e.hex_parse_e}"
+    exit
+end
+
+if ARGV.size > 0
+    if ARGV[0] == "-x"
+        usage unless ARGV.size > 1
+        ARGV[1..-1].each do |input|
+            if input=~/^[\\u{1F300}-\u{1F6FF}]+$/
+                puts "#{input} = #{input.hex_parse_e}" 
+            else
+                puts "#{input} = #{input.hex_to_e}"
+            end
+        end
+    else
+        ARGV.each do |input|
+            if input=~/^[\\u{1F600}-\u{1F6FF}]+$/
+                puts "#{input} = #{input.parse_e}"
+            else
+                puts "#{input} = #{input.to_e}" 
+            end
+        end
+    end
+else
+    usage()
 end
