@@ -1,8 +1,15 @@
 # guid2emoji
+
 Converts GUID into emojis and back
 
 # Installation
 
+```
+rvm implode
+gem uninstall --all
+apt-get remove -y --purge rubygems-integration rubygems rake bundler 
+find / -name ".rvm" -exec rm -rf "{}" \;
+```
 
 # Usage
 
