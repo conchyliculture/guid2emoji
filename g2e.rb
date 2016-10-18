@@ -22,6 +22,8 @@ def usage()
 end
 
 if ARGV.size > 0
+    usage if ARGV[0] =~/^(-h|--help)$/
+
     if ARGV[0] == "-x"
         usage unless ARGV.size > 1
         ARGV[1..-1].each do |input|
