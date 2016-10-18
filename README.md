@@ -42,3 +42,7 @@ Convert a hex string
     "f1441f79d0104275ad8746a99b2c772".hex_to_e
     "🏱🕄🔟🍹🗐🐐👂🍵🎭🎇🕆🎩🌉💲🏇🕲".hex_parse_e
 
+
+# Why did you make the code so stupidly ugly?
+
+Because I can.
