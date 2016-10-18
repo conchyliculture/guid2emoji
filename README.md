@@ -7,8 +7,8 @@ Solve all your naming issues by converting Strings into emojis and back. It is e
 ```
 rvm implode
 gem uninstall --all
-apt-get remove -y --purge rubygems-integration rubygems rake bundler 
-find / -name ".rvm" -exec rm -rf "{}" \;
+sudo apt-get remove -y --purge rubygems-integration rubygems rake bundler 
+sudo find / -name ".rvm" -exec rm -rf "{}" \;
 ```
 
 # Usage
