@@ -45,4 +45,4 @@ Convert a hex string. This will try to use glyphs that are "usually present in y
 
 # Why did you make the code so stupidly ugly?
 
-Because I can.
+Because I can. Also breaking Github's and vim's syntax highliters is fun!
