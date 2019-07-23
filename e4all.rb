@@ -7,5 +7,5 @@ class String
     def to_e; self.encode(%<utf-8>).codepoints.map{|🐢| eval(🐢> 0xFF ? sprintf(%|\"\\u{1f3%02X}\\u{1f4%02X}\\u{1f5%02X}\"|,🐢&0xFF,(🐢>>8)&0xFF,(🐢>>16)&0xFF) : %_%$\\u{1f6_+🐢.to_s(16)+%;}$;)}.join(); end
     def parse_e; 💩=%%%;🐊=☂=0; self.each_codepoint.map{|🐍| 🐍>>8==0x1f6 ? 💩<<(🐍&0xFF).chr(Encoding::UTF_8) : (🐊+=(🐍&0xff)<<((☂%3)*8); if (☂+=1)%3==0; 💩<<🐊.chr(Encoding::UTF_8);🐊=0; end)};💩; end
     def hex_to_e(); self.gsub(/[^0-9a-f]/,%%%).scan(/../).map{|⛑| eval(%(\"\\u{)+_replace_e([0x1f300,0x1f400,0x1f500][rand(3)]+⛑.to_i(16))+%&}\"&)}.join(); end
-    def hex_parse_e(); self.codepoints.map{|☹| (☹&0xFF).to_s(16)}.join(); end
+    def hex_parse_e(); self.codepoints.map{|🤳| sprintf('%02x',🤳&0xFF)}.join(); end
 end
